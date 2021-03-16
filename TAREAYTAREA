@@ -1,0 +1,30 @@
+let tareas = JSON.parse(localStorage.getItem("tareas"));
+if (tareas == null) tareas = [];
+
+let tabla = document.querySelector('#tareas')
+function llenar() {
+    let contenidoTabla = '<tr><th>Materia</th><th>Descripción</th><th>Fecha</th><th></th></tr>'
+    for (tarea of tareas){
+        contenidoTabla = contenidoTabla + `<tr><td>${tarea.Materia}</td><td>${tarea.Descripción}</td>
+        <td>${tarea.fecha}</td></tr>`
+    }
+    tabla.innerHTML = contenidoTabla;
+}
+llenar();
+let forme = document.querySelector("#ponertarea")
+function addTarea(){
+    let materian = document.querySelector("input[name=materia]").value
+    let descrip = document.querySelector("input[name=Descripción]").value
+    let fechaa = document.querySelector("input[name=fecha]").value
+    let boton = 
+console.log (fechaa)
+    let nuevatarea = {Materia:materian, Descripción:descrip, fecha:fechaa, boto: boton}
+    console.log(nuevatarea)
+
+    tareas.push(nuevatarea)
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+    llenar()    
+}
+let forr = document.querySelector("#quitartarea")
+forme.onsubmit = addTarea
+forr.onsubmit = borraa
