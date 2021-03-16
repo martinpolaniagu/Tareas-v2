@@ -27,4 +27,3 @@ console.log (fechaa)
 }
 let forr = document.querySelector("#quitartarea")
 forme.onsubmit = addTarea
-forr.onsubmit = borraa
